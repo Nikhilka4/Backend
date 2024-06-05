@@ -42,7 +42,7 @@ const githubdata = {
 
 app.get('/', (req, res) => { //.get is a one of the request methods. these methods always two parameters. one take the "/url" and the other is a callback function. callback always gives two parameters. one is request and the other is response.
 // req to fetch the data and res to send the data/responce.
-  res.send('Hello World!')
+  res.send('<h1>Hello World!</h1>')
 })
 
 app.get('/about', (req, res) => { // multiple requests can be made on the same url.
