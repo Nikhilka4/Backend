@@ -2,10 +2,24 @@
 // this is the old version and this makes the code inconsistent, so we use import instead
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
+import { app } from "./app.js";
 
 dotenv.config({path: './env'})
 
-connectDB();
+connectDB()
+.then(() => {
+    // app.on('error', (error) => {
+    //     console.error('Error starting server', error);
+    //     throw error;
+    // })
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`Server started on http://localhost:${process.env.PORT}`);
+    })
+})
+.catch((error) => {
+    console.error('Error connecting to MongoDB', error);
+    // throw error;
+})
 
 
 
