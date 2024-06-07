@@ -14,5 +14,13 @@ app.use(express.urlencoded({extended: true, limit: '16kb'})); // to parse the in
 app.use(express.static('public'));// to serve static files
 app.use(cookieParser()); // to parse the incoming cookie data
 
+// routes
+import userRoutes from './routes/user.routes.js';
+
+
+//declaration
+app.use('/api/v1/users', userRoutes);
+//https://localhost:3000/api/v1/users/register
+
 
 export { app } // we are exporting the app so that we can use it in other files
