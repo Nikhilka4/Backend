@@ -6,7 +6,7 @@ import dotenv from "dotenv"; // this is the new version, we use to maintain the 
 import connectDB from "./db/index.js"; // import the connectDB function from the db/index.js file
 import { app } from "./app.js"; // import the app object from the app.js file
 
-dotenv.config({path: './env'}) // after using the import statement, we need to config the dotenv package. and we have to specify the path of the .env file
+dotenv.config({path: './.env'}) // after using the import statement, we need to config the dotenv package. and we have to specify the path of the .env file
 
 connectDB() // this line runs the connectDB function and this is a form of promise so we can use ".then" function after this function
 .then(() => {
